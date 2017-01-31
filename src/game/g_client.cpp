@@ -1077,6 +1077,11 @@ qboolean _SetSoldierSpawnWeapons(gclient_t *client)
 	// Jaybird - override weapon select in panzerwar
 	if( cvars::bg_panzerWar.ivalue ) {
 		w = WP_PANZERFAUST;
+		//$n4cky - add engitools to players
+		if(cvars::bg_omniengi.ivalue) {
+			AddWeaponToPlayer( client, WP_DYNAMITE, 0, 1, qfalse );
+			AddWeaponToPlayer( client, WP_PLIERS, 0, 1, qfalse );
+		}
 	}
 
     // Add the primary weapon

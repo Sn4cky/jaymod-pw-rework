@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b6b8a486-003f-46b7-bbb4-893a5a1adf12}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{f0ba76a9-6a3a-461a-ad1e-b6cda085a530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui\cvar">
+      <UniqueIdentifier>{9583fa3a-4507-4a9b-882b-9e80ac296b21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bgame">
+      <UniqueIdentifier>{499a5f24-5bd9-407d-af77-525d80881c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bgame\win32">
+      <UniqueIdentifier>{1068f4d3-9857-4bb5-8c11-3a0d3c76c8a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bgame\cvar">
+      <UniqueIdentifier>{f537983c-28d6-4afa-b60a-270d5300c2a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bgame\str">
+      <UniqueIdentifier>{5a2c74e5-e33e-4b62-bee4-79911ee37456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ebf56f8d-e1bd-45d3-9ee7-401049ce1c25}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\ui">
+      <UniqueIdentifier>{f064f4aa-2035-49d5-8f6c-4150c76b5261}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui\cvar">
+      <UniqueIdentifier>{14addc44-d4a3-494c-a902-6b36e4159219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\bgame">
+      <UniqueIdentifier>{9a0be38e-fc37-4d76-b969-256f375b02cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\bgame\cvar">
+      <UniqueIdentifier>{96eda26f-36a5-4271-8d35-184fd04fc7a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\bgame\str">
+      <UniqueIdentifier>{867e0751-6207-4e3a-ac97-e8e84d50b926}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="static.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_atoms.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_gameinfo.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_loadpanel.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_main.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_players.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_shared.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_syscalls.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="cvar\Cvar.cpp">
+      <Filter>Source Files\ui\cvar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\bg_campaign.cpp">
+      <Filter>Source Files\bgame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\bg_classes.cpp">
+      <Filter>Source Files\bgame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\bg_jaymod.cpp">
+      <Filter>Source Files\bgame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\bg_misc.cpp">
+      <Filter>Source Files\bgame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\q_math.cpp">
+      <Filter>Source Files\bgame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\q_shared.cpp">
+      <Filter>Source Files\bgame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\win32\bg_cpu.cpp">
+      <Filter>Source Files\bgame\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\cvar\Cvar.cpp">
+      <Filter>Source Files\bgame\cvar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\str\PairDump.cpp">
+      <Filter>Source Files\bgame\str</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bgame\str\util.cpp">
+      <Filter>Source Files\bgame\str</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="keycodes.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_local.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_public.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_shared.h">
+      <Filter>Header Files\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="cvar\impl.h">
+      <Filter>Header Files\ui\cvar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\bg_classes.h">
+      <Filter>Header Files\bgame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\bg_public.h">
+      <Filter>Header Files\bgame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\q_shared.h">
+      <Filter>Header Files\bgame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cgame\tr_types.h">
+      <Filter>Header Files\bgame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bgame\cvar\Cvar.h">
+      <Filter>Header Files\bgame\cvar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bgame\cvar\impl.h">
+      <Filter>Header Files\bgame\cvar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bgame\cvar\public.h">
+      <Filter>Header Files\bgame\cvar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bgame\str\impl.h">
+      <Filter>Header Files\bgame\str</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bgame\str\PairDump.h">
+      <Filter>Header Files\bgame\str</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bgame\str\public.h">
+      <Filter>Header Files\bgame\str</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bgame\str\util.h">
+      <Filter>Header Files\bgame\str</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ui.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -73,6 +73,11 @@ namespace objects {
     extern Cvar bg_maxGrenLaunchers;
     extern Cvar bg_maxM97s;
 
+	// $n4cky
+	extern Cvar bg_omniengi;
+	extern Cvar bg_ffknockback;
+	extern Cvar bg_pantsy;
+
     extern Cvar bg_sk5_battle;
     extern Cvar bg_sk5_cvops;
     extern Cvar bg_sk5_eng;

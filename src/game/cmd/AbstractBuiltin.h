@@ -55,6 +55,7 @@ private:
 #include <game/cmd/Page.h>
 #include <game/cmd/Pants.h>
 #include <game/cmd/PanzerWar.h>
+#include <game/cmd/PassVote.h>
 #include <game/cmd/Pause.h>
 #include <game/cmd/Pip.h>
 #include <game/cmd/Pop.h>
@@ -131,6 +132,7 @@ namespace builtins {
     extern Page         page;
     extern Pants        pants;
     extern PanzerWar    panzerwar;
+	extern PassVote		passvote;
     extern Pause        pause;
     extern Pip          pip;
     extern Pop          pop;;

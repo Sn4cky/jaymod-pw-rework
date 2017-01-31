@@ -207,7 +207,7 @@ ammotable_t ammoTableMP[WP_NUM_WEAPONS] = {
 	{	1,				0,		10,		0,		1,		1000,	DELAY_THROW,	1600,	0,		0,		MOD_POISON_GAS			},	// WP_POISON_GAS			// 53
 	{	1,				0,		1,		0,		1,		100,	DELAY_LOW,		100,	0,		0,		MOD_LANDMINE			},	// WP_LANDMINE_BBETTY		// 54
 	{	1,				0,		1,		0,		1,		100,	DELAY_LOW,		100,	0,		0,		MOD_POISON_GAS			},	// WP_LANDMINE_PGAS			// 55
-	{	3,				1,		3,		0,		3,		0,  	DELAY_THROW,	0,	    0,		0,		MOD_MOLOTOV 			},	// WP_MOLOTOV   			// 56
+	{	8,				1,		8,		0,		8,		0,  	DELAY_THROW,	0,	    0,		0,		MOD_MOLOTOV 			},	// WP_MOLOTOV   			// 56
 };
 
 //----(SA)	moved in here so both games can get to it
@@ -5110,7 +5110,8 @@ const voteType_t voteToggles[] =
 		{ "vote_allow_muting",			CV_SVF_MUTING },
 		{ "vote_allow_generic",			CV_SVF_GENERIC },
 		{ "vote_allow_matchrestart",	CV_SVF_MATCHRESTART },
-		{ "vote_allow_startmatch",		CV_SVF_STARTMATCH }
+		{ "vote_allow_startmatch",		CV_SVF_STARTMATCH },
+		{ "vote_allow_teamshooting",	CV_SVF_TEAMSHOOTING },
 	};
 
 int numVotesAvailable = sizeof(voteToggles) / sizeof(voteType_t);

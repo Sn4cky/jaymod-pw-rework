@@ -228,6 +228,11 @@ void G_AddKillSpree(gentity_t *ent) {
 	for (i = 0; i < KS_NUMLEVELS; i++) {
 		if (kills == killspreeLevels[i]) {
 			G_SendKillSpree(ent, (ks_t)i, kills);
+			// $n4cky - Pantsy takes off the pants of the person on a spree
+			if (g_pantsy.integer && i == 0) {
+				string buffer = va("!pants %d", ent->client->ps.clientNum);
+				trap_SendConsoleCommand( EXEC_APPEND, buffer.c_str() );
+			}
 		}
 	}
 }

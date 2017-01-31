@@ -68,6 +68,9 @@ static const vote_reference_t aVoteInfo[] = {
 	{ 0x1ff, "unreferee",	 G_Unreferee_v,		"UNReferee",		" <player_id>^7\n  Elects a player to have admin abilities removed" },
 	{ 0x1ff, "warmupdamage", G_Warmupfire_v,	"Warmup Damage",	" <0|1|2>^7\n  Specifies if players can inflict damage during warmup" },
 	{ 0x1ff, "balancedteams",G_BalancedTeams_v,	"Balanced Teams",	" <0|1>^7\n  Toggles team balance forcing" },
+
+	// $n4cky - Teamshooting vote
+	{ 0x1ff, "teamshooting", G_TeamShooting_v,	"Teamshooting",		" <0|1>^7\n  Toggles teamshooting" },
 	{ 0, 0, NULL, 0 }
 };
 
@@ -909,6 +912,21 @@ int G_BalancedTeams_v( gentity_t *ent, unsigned int dwVoteIndex, char *arg, char
 		trap_Cvar_Set( "g_lms_teamForceBalance", level.voteInfo.vote_value );
 	}
 
+	return(G_OK);
+}
+
+// $n4cky - Teamshooting
+int G_TeamShooting_v( gentity_t *ent, unsigned int dwVoteIndex, char *arg, char *arg2, qboolean fRefereeCmd )
+{
+	if(arg) {
+		return(G_voteProcessOnOff(ent, arg, arg2, fRefereeCmd,
+									!!(g_ffknockback.integer),
+									vote_allow_teamshooting.integer,
+									dwVoteIndex));
+	} else {
+		G_voteSetOnOff("Teamshooting", "g_ffknockback");
+		trap_Cvar_Set( "g_ffknockback", level.voteInfo.vote_value );
+	}
 	return(G_OK);
 }
 

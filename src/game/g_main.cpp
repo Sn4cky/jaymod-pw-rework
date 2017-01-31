@@ -139,6 +139,10 @@ vmCvar_t		vote_allow_timelimit;
 vmCvar_t		vote_allow_warmupdamage;
 vmCvar_t		vote_allow_balancedteams;
 vmCvar_t		vote_allow_muting;
+
+// $n4cky - Vote to enable/disable g_ffknockback
+vmCvar_t		vote_allow_teamshooting;
+
 vmCvar_t		vote_limit;
 vmCvar_t		vote_percent;
 vmCvar_t		z_serverflags;
@@ -245,6 +249,11 @@ vmCvar_t        g_antiwarp;
 
 vmCvar_t        sv_maxRate;
 
+// $n4cky
+vmCvar_t		g_omniengi;
+vmCvar_t		g_ffknockback;
+vmCvar_t		g_pantsy;
+
 // Class specific
 vmCvar_t		g_engineers;
 vmCvar_t		g_soldiers;
@@ -345,6 +354,11 @@ cvarTable_t		gameCvarTable[] = {
     { &g_antiwarp,          "g_antiwarp",           "1",        0 },
 
     { &sv_maxRate,          "sv_maxRate",           "25000",    CVAR_SYSTEMINFO | CVAR_ARCHIVE },
+
+	// $n4cky
+	{ &g_omniengi,			"g_omniengi",			"0",		CVAR_ARCHIVE },
+	{ &g_ffknockback,		"g_ffknockback",		"0",		CVAR_ARCHIVE },
+	{ &g_pantsy,			"g_pantsy",				"0",		CVAR_ARCHIVE },
 
 	// Class specific
 	{ &g_engineers,			"g_engineers",			"0",		CVAR_ARCHIVE },
@@ -523,6 +537,10 @@ cvarTable_t		gameCvarTable[] = {
 	{ &vote_allow_warmupdamage,	"vote_allow_warmupdamage", "1", 0, 0, qfalse, qfalse },
 	{ &vote_allow_balancedteams,"vote_allow_balancedteams", "1", 0, 0, qfalse, qfalse },
 	{ &vote_allow_muting,		"vote_allow_muting", "1", 0, 0, qfalse, qfalse },
+
+	// $n4cky
+	{ &vote_allow_teamshooting,	"vote_allow_teamshooting", "1", 0, 0, qfalse, qfalse },
+
 	{ &vote_limit,		"vote_limit", "5", 0, 0, qfalse, qfalse },
 	{ &vote_percent,	"vote_percent", "50", 0, 0, qfalse, qfalse },
 
@@ -1592,6 +1610,7 @@ void G_UpdateCvars( void )
 				}
 				else {
 					// OSP - Update vote info for clients, if necessary
+					// $n4cky - Updated it with teamshooting vote
 					if(cv->vmCvar == &vote_allow_comp			|| cv->vmCvar == &vote_allow_gametype		||
 						cv->vmCvar == &vote_allow_kick			|| cv->vmCvar == &vote_allow_map			||
 						cv->vmCvar == &vote_allow_matchreset	||
@@ -1601,7 +1620,7 @@ void G_UpdateCvars( void )
 						cv->vmCvar == &vote_allow_friendlyfire	|| cv->vmCvar == &vote_allow_timelimit		||
 						cv->vmCvar == &vote_allow_warmupdamage	|| 
 						cv->vmCvar == &vote_allow_balancedteams	|| cv->vmCvar == &vote_allow_muting			||
-						cv->vmCvar == &vote_allow_generic
+						cv->vmCvar == &vote_allow_generic		|| cv->vmCvar == &vote_allow_teamshooting
 					) {
 						fVoteFlags = qtrue;
 					} else {
@@ -3326,6 +3345,14 @@ void CheckVote( void ) {
 			// Voting percentage based
 			int total;
 			int pcnt = (level.voteInfo.vote_fn == G_StartMatch_v) ? 75 : vote_percent.integer;
+			
+			// $n4cky - Teamshooting: Everyone has to vote yes to turn on and enough to call to turn it off
+			if(level.voteInfo.vote_fn == G_TeamShooting_v && !g_ffknockback.value) {
+				pcnt = 99;
+			} else if(level.voteInfo.vote_fn == G_TeamShooting_v && g_ffknockback.value) {
+				pcnt = 1;
+			}
+
             int voted = level.voteInfo.voteYes + level.voteInfo.voteNo;
 
 			// Bounds check it
@@ -3362,6 +3389,13 @@ void CheckVote( void ) {
 	} else if( !vote_voteBased.integer ) {
 		int pcnt = (level.voteInfo.vote_fn == G_StartMatch_v) ? 75 : vote_percent.integer;
 		int total;
+
+		// $n4cky - Teamshooting: Everyone has to vote yes to turn on and enough to call to turn it off
+		if(level.voteInfo.vote_fn == G_TeamShooting_v && !g_ffknockback.value) {
+			pcnt = 99;
+		} else if(level.voteInfo.vote_fn == G_TeamShooting_v && g_ffknockback.value) {
+			pcnt = 1;
+		}
 
 		if( pcnt > 99 ) {
 			pcnt = 99;

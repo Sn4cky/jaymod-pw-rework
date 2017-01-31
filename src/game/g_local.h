@@ -1815,6 +1815,12 @@ extern	vmCvar_t	sv_privatepassword;
 extern	vmCvar_t	g_gravity;
 extern	vmCvar_t	g_speed;
 extern	vmCvar_t	g_knockback;
+
+// $n4cky
+extern	vmCvar_t	g_ffknockback;
+extern	vmCvar_t	g_pantsy;
+extern	vmCvar_t	g_omniengi;
+
 extern	vmCvar_t	g_forcerespawn;
 extern	vmCvar_t	g_inactivity;
 extern	vmCvar_t	g_debugMove;
@@ -1945,6 +1951,7 @@ extern vmCvar_t		vote_allow_timelimit;
 extern vmCvar_t		vote_allow_warmupdamage;
 extern vmCvar_t		vote_allow_balancedteams;
 extern vmCvar_t		vote_allow_muting;
+extern vmCvar_t		vote_allow_teamshooting;
 extern vmCvar_t		vote_limit;
 extern vmCvar_t		vote_percent;
 extern vmCvar_t		z_serverflags;
@@ -2595,6 +2602,7 @@ int G_Timelimit_v(gentity_t *ent, unsigned int dwVoteIndex, char *arg, char *arg
 int G_Warmupfire_v(gentity_t *ent, unsigned int dwVoteIndex, char *arg, char *arg2, qboolean fRefereeCmd);
 int G_Unreferee_v(gentity_t *ent, unsigned int dwVoteIndex, char *arg, char *arg2, qboolean fRefereeCmd);
 int G_BalancedTeams_v(gentity_t *ent, unsigned int dwVoteIndex, char *arg, char *arg2, qboolean fRefereeCmd);
+int G_TeamShooting_v(gentity_t *ent, unsigned int dwVoteIndex, char *arg, char *arg2, qboolean fRefereeCmd);
 
 void G_LinkDebris( void );
 void G_LinkDamageParents( void );

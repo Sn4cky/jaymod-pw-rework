@@ -54,6 +54,11 @@ namespace objects {
     Cvar bg_maxGrenLaunchers( "team_maxGrenLaunchers", "-1", CVAR_JAYMODINFO );
     Cvar bg_maxM97s         ( "team_maxM97s",     "-1", CVAR_JAYMODINFO );
 
+	// $n4cky
+	Cvar bg_omniengi		( "g_omniengi",		  "0",	CVAR_JAYMODINFO );
+	Cvar bg_ffknockback		( "g_ffknockback",	  "0",	CVAR_JAYMODINFO );
+	Cvar bg_pantsy			( "g_pantsy",		  "0",	CVAR_JAYMODINFO );
+
     Cvar bg_sk5_battle    ( "g_sk5_battle",    "1",    CVAR_JAYMODINFO );
     Cvar bg_sk5_lightweap ( "g_sk5_lightweap", "1",    CVAR_JAYMODINFO );
     Cvar bg_sk5_cvops     ( "g_sk5_cvops",     "7",    CVAR_JAYMODINFO );
@@ -220,6 +225,7 @@ namespace builtins {
     Page         page;
     Pants        pants;
     PanzerWar    panzerwar;
+	PassVote	 passvote;
     Pause        pause;
     Pip          pip;
     Pop          pop;
